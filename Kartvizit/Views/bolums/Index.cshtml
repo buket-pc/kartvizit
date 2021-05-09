@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Kartvizit.Models.bolum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+    @*sürüm yönetim uygulaması olarak github ı kullanıcam. *@
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.shortDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.longDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.orderId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shortDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.longDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.bolumId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.bolumId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.bolumId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
