@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5/75NiPDHOc5uXEvfrTUFFRzuuUGARlMkDy1sYnTdJBUoJNia+OZgoeQxstLORRrh+XOwFdQWI+2LqKVlMtIQA==",
+  "dgSpecHash": "6Jcqse5SOjnF9Kxz6CCsY1TTs6IRJEP50cuDeYE3kRSu7EwriGZb+Lv4w+ls+uWlu/c3pQ9xOjX77ok77NCLGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\asus\\source\\repos\\Kartvizit\\Kartvizit\\Kartvizit.csproj",
+  "projectFilePath": "C:\\Users\\asus\\source\\repos\\kartvizit\\Kartvizit\\Kartvizit.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.13\\microsoft.aspnetcore.cryptography.internal.3.1.13.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.13\\microsoft.aspnetcore.cryptography.keyderivation.3.1.13.nupkg.sha512",

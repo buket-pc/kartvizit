@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\source\\repos\\Kartvizit\\Kartvizit\\Kartvizit.csproj": {}
+    "C:\\Users\\asus\\source\\repos\\kartvizit\\Kartvizit\\Kartvizit.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\source\\repos\\Kartvizit\\Kartvizit\\Kartvizit.csproj": {
+    "C:\\Users\\asus\\source\\repos\\kartvizit\\Kartvizit\\Kartvizit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\source\\repos\\Kartvizit\\Kartvizit\\Kartvizit.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\source\\repos\\kartvizit\\Kartvizit\\Kartvizit.csproj",
         "projectName": "Kartvizit",
-        "projectPath": "C:\\Users\\asus\\source\\repos\\Kartvizit\\Kartvizit\\Kartvizit.csproj",
+        "projectPath": "C:\\Users\\asus\\source\\repos\\kartvizit\\Kartvizit\\Kartvizit.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\source\\repos\\Kartvizit\\Kartvizit\\obj\\",
+        "outputPath": "C:\\Users\\asus\\source\\repos\\kartvizit\\Kartvizit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
