@@ -5,13 +5,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Kartvizit.Models
+namespace kartvizit.Models
 {
     public class bolum //POCO class
     {//code first yaklaşımı ile tablomuzu oluşturduk. PMC --> add-migration sadf sonra update-database
         public int bolumId { get; set; }
         [StringLength(100)]
-        [DisplayName("Bölüm Adı")]
+        [DisplayName("Kategori Adı")]
         public string name { get; set; }
         [StringLength(200)]
         [DisplayName("Kısa Açıklama")]

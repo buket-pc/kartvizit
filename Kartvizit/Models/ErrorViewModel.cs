@@ -1,6 +1,6 @@
 using System;
 
-namespace Kartvizit.Models
+namespace kartvizit.Models
 {
     public class ErrorViewModel
     {

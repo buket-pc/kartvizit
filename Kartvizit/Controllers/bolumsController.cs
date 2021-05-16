@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Kartvizit.Data;
-using Kartvizit.Models;
+using kartvizit.Data;
+using kartvizit.Models;
 using Microsoft.AspNetCore.Authorization;
 
-namespace Kartvizit.Controllers
+namespace kartvizit.Controllers
 {
+    [Authorize]
     public class bolumsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -69,7 +70,7 @@ namespace Kartvizit.Controllers
             {
                 _context.Add(bolum);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("AdminIndex","bolums");
             }
             return View(bolum);
         }
@@ -122,12 +123,13 @@ namespace Kartvizit.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("AdminIndex", "bolums");
             }
             return View(bolum);
         }
 
         // GET: bolums/Delete/5
+        [Authorize(Roles = "adminrole")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -148,12 +150,13 @@ namespace Kartvizit.Controllers
         // POST: bolums/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "adminrole")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var bolum = await _context.bolum.FindAsync(id);
             _context.bolum.Remove(bolum);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("AdminIndex", "bolums");
         }
 
         private bool bolumExists(int id)

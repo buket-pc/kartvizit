@@ -1,0 +1,43 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "title";
+}
+
+<!--Page Title-->
+<section class="page-title" style="background-image: url(../../../../images/background/8.jpg);">
+    <div class="auto-container">
+        <div class="title-outer">
+            <h1>@ViewData["Title"]</h1>
+            @*<ul class="page-breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li>Shop</li>
+                </ul>*@
+        </div>
+    </div>
+</section>
+
+<section class="login-section">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="column col-lg-12 col-md-12 col-sm-12">
+                @{
+                    if (@Model.DisplayConfirmAccountLink)
+                    {
+                        <p>
+                            mailbody"]
+                        </p>
+                    }
+                    else
+                    {
+                        <p>
+                            Please check your email to confirm your account.
+                        </p>
+                    }
+                }
+                <hr />
+            </div>
+        </div>
+    </div>
+</section>
+

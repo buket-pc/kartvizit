@@ -1,15 +1,46 @@
-﻿@model IEnumerable<Kartvizit.Models.bolum>
+﻿@model IEnumerable<kartvizit.Models.bolum>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Kategoriler";
 }
 
-<h1>Index</h1>
-    @*sürüm yönetim uygulaması olarak github ı kullanıcam. *@
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<!--Page Title-->
+<section class="page-title" style="background-image: url(../images/background/8.jpg);">
+    <div class="auto-container">
+        <div class="title-outer">
+            <h1>@ViewData["Title"]</h1>
+            <ul class="page-breadcrumb">
+                <li><a asp-action="Index" asp-controller="Home">Anasayfa</a></li>
+                <li>Kategoriler</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+
+<!-- Top Features -->
+<section class="top-features">
+    <div class="auto-container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+                <!-- Feature Block -->
+                <div class="feature-block col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <span class="icon flaticon-charity"></span>
+                        <h4><a href="#">@Html.DisplayFor(modelItem => item.name)</a></h4>
+                        <p>@Html.DisplayFor(modelItem => item.shortDesc)</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- End Features Section -->
+
+
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -28,26 +59,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.shortDesc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.longDesc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.orderId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.bolumId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.bolumId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.bolumId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.shortDesc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.longDesc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.orderId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.bolumId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.bolumId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.bolumId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
-</table>
+</table>*@

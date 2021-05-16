@@ -1,49 +1,207 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Kartvizit</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta charset="utf-8">
+    <title>@ViewData["Title"] - kartvizit</title>
+
+    <!-- Stylesheets -->
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
+    <link href="~/plugins/revolution/css/layers.css" rel="stylesheet" type="text/css"><!-- REVOLUTION LAYERS STYLES -->
+    <link href="~/plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css"><!-- REVOLUTION NAVIGATION STYLES -->
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/responsive.css" rel="stylesheet">
+
+    <!--Color Themes-->
+    <link id="theme-color-file" href="~/css/color-themes/buket_color.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="~/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="~/images/favicon.png" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Kartvizit</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+
+    <div class="page-wrapper">
+
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
+        <!-- Main Header-->
+        <header class="main-header header-style-four">
+
+            <!-- Header top -->
+            <div class="header-top">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <div class="top-left">
+                            <ul class="contact-list clearfix">
+                                <li><i class="flaticon-hospital-1"></i>Zonguldak Bülent Ecevit Üniversitesi</li>
+                                <li><i class="flaticon-phone-2"></i>(0534) 019 75 26</li>
+
+                            </ul>
+                        </div>
+                        <div class="top-right">
+                            <ul class="social-icon-one">
+                                <partial name="_AdminPartial" />
+                                @*<li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                <li><a href="#"><span class="fab fa-skype"></span></a></li>
+                                <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>*@
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+            <!-- End Header Top -->
+            <!-- Header Lower -->
+            <div class="header-lower">
+                <div class="auto-container">
+                    <!-- Main box -->
+                    <div class="main-box">
+                        <div class="logo-box">
+                            <div class="logo"><a asp-action="Index" asp-controller="Home"><img src="~/images/logo.png" alt="" title=""></a></div>
+                        </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - Kartvizit - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+                        <!--Nav Box-->
+                        <div class="nav-outer">
+                            <nav class="nav main-menu">
+                                <ul class="navigation" id="navbar">
+                                    <li><a asp-action="Index" asp-controller="firmas">FİRMALAR</a></li>
+                                    <li><a asp-action="Index" asp-controller="bolums">KATEGORİLER</a></li>
+                                </ul>
+                            </nav>
+                            <!-- Main Menu End-->
+                            <partial name="_LoginPartial" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticky Header  -->
+            <div class="sticky-header">
+                <div class="auto-container">
+
+                    <div class="main-box">
+                        <div class="logo-box">
+                            <div class="logo"><a asp-action="Index" asp-controller="Home"><img src="~/images/logo.png" alt="" title=""></a></div>
+                        </div>
+
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </div>
+                </div>
+            </div><!-- End Sticky Menu -->
+            <!-- Mobile Header -->
+            <div class="mobile-header">
+                <div class="logo"><a asp-action="Index" asp-controller="Home"><img src="~/images/logo.png" alt="" title=""></a></div>
+
+                <!--Nav Box-->
+                <div class="nav-outer clearfix">
+
+                    <div class="outer-box">
+                        <!-- Search Btn -->
+                        <div class="search-box">
+                            <button class="search-btn mobile-search-btn"><i class="flaticon-magnifying-glass"></i></button>
+                        </div>
+
+                        <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span class="fa fa-bars"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Nav -->
+            <div id="nav-mobile"></div>
+            <!-- Header Search -->
+            <!--<div class="search-popup">
+                <span class="search-back-drop"></span>
+                <button class="close-search"><span class="fa fa-times"></span></button>
+
+                <div class="search-inner">
+                    <form method="post" action="blog-showcase.html">
+                        <div class="form-group">
+                            <input type="search" name="search-field" value="" placeholder="Search..." required="">
+                            <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>-->
+            <!-- End Header Search -->
+        </header>
+        <!--End Main Header -->
+
+        @RenderBody()
+
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+
+            <!--Footer Bottom-->
+            <div class="footer-bottom">
+                <!-- Scroll To Top -->
+                <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+                <div class="auto-container">
+                    <div class="inner-container clearfix">
+                        <div class="footer-nav">
+                            <ul class="clearfix">
+                                <li><a asp-action="Index" asp-controller="Home">Anasayfa</a></li>
+                                <li><a asp-action="Create" asp-controller="contactmes">İletişim</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="copyright-text">
+                            <p>© 2021 <a href="#">kartvizit</a> | Zonguldak Bülent Ecevit Üniversitesi | Buket AY</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End Main Footer -->
+
+    </div><!-- End Page Wrapper -->
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <!--Revolution Slider-->
+    <script src="~/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="~/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="~/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="~/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="~/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="~/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="~/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="~/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="~/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="~/js/main-slider-script.js"></script>
+    <!--Revolution Slider-->
+
+
+
+
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.fancybox.js"></script>
+    <script src="~/js/jquery.modal.min.js"></script>
+    <script src="~/js/mmenu.polyfills.js"></script>
+    <script src="~/js/mmenu.js"></script>
+    <script src="~/js/appear.js"></script>
+    <script src="~/js/mixitup.js"></script>
+    <script src="~/js/owl.js"></script>
+    <script src="~/js/wow.js"></script>
+    <script src="~/js/script.js"></script>
+
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+
+

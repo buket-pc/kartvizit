@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "YÖNETİCİ PANELİ";
+}
+
+
+
+<section class="checkout-page">
+    <div class="auto-container">
+
+        <!--Checkout Details-->
+        <div class="checkout-form">
+                <div class="row clearfix">
+                    <!--Column-->
+                    <div class="column col-lg-12 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                                <h3>@ViewData["Title"]</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <ul>
+                                        @*<li><a href="@Url.Action("AdminIndex","firmas")">Firmalar</a></li>*@
+                                        <li><a href="@Url.Action("AdminIndex","bolums")">Kategoriler ve Firmalar</a></li>
+                                        <li><a href="@Url.Action("ListUsers","AdminSection")">Tüm Kullanıcılar</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+        <!--End Checkout Details-->
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

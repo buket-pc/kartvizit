@@ -1,53 +1,104 @@
-﻿@model IEnumerable<Kartvizit.Models.firma>
+﻿@model IEnumerable<kartvizit.Models.firma>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "kartvizit";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.shortDesc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.address)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.shortDesc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.address)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.firmaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.firmaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.firmaId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<!--Page Title-->
+<section class="page-title" style="background-image: url(../images/background/buket.jpg);">
+    <div class="auto-container">
+        <div class="title-outer">
+            <h1>Firmalar</h1>
+            <ul class="page-breadcrumb">
+                <li><a asp-action="Index" asp-controller="Home">Anasayfa</a></li>
+                <li>Firmalar</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+<!-- Sidebar Page Container -->
+<div class="sidebar-page-container">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <!--Content Side-->
+            <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                <div class="our-shop">
+                    @*<div class="shop-upper-box">
+                            <div class="orderby">
+                                <select name="orderby">
+                                    <option value="default">Default Sorting</option>
+                                    <option value="popularity">Sort by popularity</option>
+                                    <option value="rating">Sort by average rating</option>
+                                    <option value="date">Sort by newness</option>
+                                    <option value="price">Sort by price: low to high</option>
+                                    <option value="price-desc">Sort by price: high to low</option>
+                                </select>
+                            </div>
+                            <div class="items-label">Showing all 9 results</div>
+                        </div>*@
+
+                    <div class="row">
+
+                        @foreach (var item in Model)
+                        {
+
+                            <!-- Shop Item -->
+                            <div class="shop-item col-lg-4 col-md-6 col-sm-12">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <figure class="image"><a asp-action="Details" asp-route-id="@item.firmaId"><img src="~/images/firma/@Html.DisplayFor(modelItem => item.imageLink)" alt=""></a></figure>
+
+                                    </div>
+                                    <div class="lower-content">
+                                        <div class="rating">
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star"></span>
+                                            <span class="fa fa-star light"></span>
+                                        </div>
+                                        <h4 class="name"><a asp-action="Details" asp-route-id="@item.firmaId">@Html.DisplayFor(modelItem => item.name)</a></h4>
+                                        @*<div class="price"> $12.00 <del>$14.00</del></div>*@
+                                        <a asp-action="Details" asp-route-id="@item.firmaId" class="theme-btn add-to-cart">Detay</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--Sidebar Side-->
+            <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                <aside class="sidebar">
+                    <!--search box-->
+                    <div class="sidebar-widget search-box">
+                        <form method="post" action="blog.html">
+                            <div class="form-group">
+                                <input type="search" name="search-field" value="" placeholder="Ara....." required="">
+                                <button type="submit"><span class="icon fa fa-search"></span></button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-widget category-list">
+                        <div class="sidebar-title"><h3>Kategoriler</h3></div>
+                        <ul class="cat-list">
+                            <li><a href="#">Procedures <span>(06)</span></a></li>
+                            <li><a href="#">Transplantation <span>(02)</span></a></li>
+                            <li class="active"><a href="#">Management <span>(05)</span></a></li>
+                            <li><a href="#">Healthcare Tips <span>(25)</span></a></li>
+                            <li><a href="#">Uncategorized <span>(04)</span></a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Sidebar Container -->

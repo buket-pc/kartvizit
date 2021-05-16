@@ -1,48 +1,70 @@
-﻿@model Kartvizit.Models.firma
+﻿@model kartvizit.Models.firma
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Düzenle";
 }
 
-<h1>Edit</h1>
+<section class="checkout-page">
+    <div class="auto-container">
 
-<h4>firma</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="firmaId" />
-            <div class="form-group">
-                <label asp-for="name" class="control-label"></label>
-                <input asp-for="name" class="form-control" />
-                <span asp-validation-for="name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="shortDesc" class="control-label"></label>
-                <input asp-for="shortDesc" class="form-control" />
-                <span asp-validation-for="shortDesc" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="phone" class="control-label"></label>
-                <input asp-for="phone" class="form-control" />
-                <span asp-validation-for="phone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="address" class="control-label"></label>
-                <input asp-for="address" class="form-control" />
-                <span asp-validation-for="address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        <!--Checkout Details-->
+        <div class="checkout-form">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div class="row clearfix">
+                    <!--Column-->
+                    <div class="column col-lg-12 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                                <h3>@ViewData["Title"]</h3>
+                            </div>
+                            <div class="row clearfix">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="firmaId" />
+                                <input type="hidden" asp-for="firmaBolumId" />
+                                <input type="hidden" asp-for="imageLink" />
+                                <div class="form-group col-md-12 col-sm-12">
+                                    <label asp-for="name" class="control-label"></label>
+                                    <input asp-for="name" class="form-control" />
+                                    <span asp-validation-for="name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    <label asp-for="shortDesc" class="control-label"></label>
+                                    <input asp-for="shortDesc" class="form-control" />
+                                    <span asp-validation-for="shortDesc" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    <label asp-for="longDesc" class="control-label"></label>
+                                    <input asp-for="longDesc" class="form-control" />
+                                    <span asp-validation-for="longDesc" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    <label asp-for="phone" class="control-label"></label>
+                                    <input asp-for="phone" class="form-control" />
+                                    <span asp-validation-for="phone" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    <label asp-for="address" class="control-label"></label>
+                                    <input asp-for="address" class="form-control" />
+                                    <span asp-validation-for="address" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    <label asp-for="ImageFile" class="control-label"></label>
+                                    <input asp-for="ImageFile" class="form-control" />
+                                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    <input type="submit" value="Save" class="btn btn-primary" />
+                                    <a asp-action="AdminIndex" asp-route-id="@ViewData["bolumId"]">Geri Dön</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+</section>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

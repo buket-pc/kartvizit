@@ -1,0 +1,26 @@
+﻿@model IEnumerable<kartvizit.Models.bolum>
+<!--Sidebar Side-->
+<div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+    <aside class="sidebar">
+        <!--search box-->
+        <div class="sidebar-widget search-box">
+            <form method="post" action="blog.html">
+                <div class="form-group">
+                    <input type="search" name="search-field" value="" placeholder="Ara....." required="">
+                    <button type="submit"><span class="icon fa fa-search"></span></button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Categories -->
+        <div class="sidebar-widget category-list">
+            <div class="sidebar-title"><h3>Kategoriler</h3></div>
+            <ul class="cat-list">
+                @foreach (var item in Model)
+                {
+                    <li><a href="#">@Html.DisplayFor(modelItem => item.name)</a></li>
+                }
+                </ul>
+        </div>
+    </aside>
+</div>

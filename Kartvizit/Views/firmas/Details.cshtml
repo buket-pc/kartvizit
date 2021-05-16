@@ -1,42 +1,80 @@
-﻿@model Kartvizit.Models.firma
+﻿@model kartvizit.Models.firma
 
 @{
     ViewData["Title"] = "Details";
 }
+<!--Page Title-->
+<section class="page-title" style="background-image: url(../../images/background/8.jpg);">
+    <div class="auto-container">
+        <div class="title-outer">
+            <h1>Firmalar</h1>
+            <ul class="page-breadcrumb">
+                <li><a asp-action="Index" asp-controller="Home">Anasayfa</a></li>
+                <li>Firmalar</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+<!-- Sidebar Page Container -->
+<div class="sidebar-page-container">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <!--Content Side-->
+            <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                <div class="shop-single">
+                    <div class="product-details">
+                        <!--Basic Details-->
+                        <div class="basic-details">
+                            <div class="row clearfix">
+                                <div class="image-column col-md-6 col-sm-12">
+                                    <figure class="image-box"><a href="~/images/firma/@Html.DisplayFor(model => model.imageLink)" class="lightbox-image" title="@Html.DisplayFor(model => model.name)"><img src="~/images/firma/@Html.DisplayFor(model => model.imageLink)" alt=""></a></figure>
+                                </div>
+                                <div class="info-column col-md-6 col-sm-12">
+                                    <div class="details-header">
+                                        <h4>@Html.DisplayFor(model => model.name)</h4>
+                                    </div>
 
-<h1>Details</h1>
+                                    <div class="text">@Html.DisplayFor(model => model.longDesc)</div>
+                                    @*<div class="other-options clearfix">
+                                            <button type="button" class="theme-btn btn-style-one add-to-cart"><span class="btn-title">Add To Cart</span></button>
+                                        </div>*@
+                                </div>
+                            </div>
+                        </div>
+                        <!--Basic Details-->
+                    </div>
+                </div>
+            </div>
 
-<div>
-    <h4>firma</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.shortDesc)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.shortDesc)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.phone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.phone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.address)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.address)
-        </dd>
-    </dl>
+            <!--Sidebar Side-->
+            <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                <aside class="sidebar">
+                    <!--search box-->
+                    <div class="sidebar-widget search-box">
+                        <form method="post" action="blog.html">
+                            <div class="form-group">
+                                <input type="search" name="search-field" value="" placeholder="Search....." required="">
+                                <button type="submit"><span class="icon fa fa-search"></span></button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-widget category-list">
+                        <div class="sidebar-title"><h3>Categories</h3></div>
+                        <ul class="cat-list">
+                            <li><a href="#">Procedures <span>(06)</span></a></li>
+                            <li><a href="#">Transplantation <span>(02)</span></a></li>
+                            <li class="active"><a href="#">Management <span>(05)</span></a></li>
+                            <li><a href="#">Healthcare Tips <span>(25)</span></a></li>
+                            <li><a href="#">Uncategorized <span>(04)</span></a></li>
+                        </ul>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.firmaId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+<!-- End Sidebar Container -->

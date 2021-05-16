@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ApplicationUser>
+
+@{
+    ViewData["Title"] = "Tüm Kullanıcılar";
+}
+<link rel="stylesheet" type="text/css" href="~/css/jquery.dataTables.min.css" />
+
+
+<section class="team-section-two alternate alternate2">
+    <div class="auto-container">
+        <div class="row">
+            <div class="sec-title">
+                <h3>@ViewData["Title"]</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <table id="userstable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        @*<th>User Id</th>*@
+                        <th>Ad Soyad</th>
+                        <th>E Posta</th>
+                        <th>Bölüm</th>
+                        <th>Kurum</th>
+                        <th>Telefon</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Any())
+                    {
+                        foreach (var user in Model)
+                        {
+
+                            <tr>
+                                @*<td>@user.Id</td>*@
+                                <td>@user.AdSoyad</td>
+                                <td>@user.Email</td>
+                                <td>@user.Bolum</td>
+                                <td>@user.Kurum</td>
+                                <td>@user.Telefon</td>
+                                <td>
+                                    <a asp-action="EditUser" asp-route-id="@user.Id">Düzenle</a> |
+                                    <a asp-action="Delete" asp-route-id="@user.Id">Sil</a>
+                                </td>
+
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</section>
+
+@section Scripts
+{
+    <script src="~/js/jquery-3.5.1.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#userstable').DataTable({
+                "order": [[3, "desc"]]
+            });
+        });
+
+    </script>
+}

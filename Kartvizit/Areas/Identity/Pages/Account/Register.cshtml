@@ -1,66 +1,83 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "YENİ KAYIT";
 }
-
-<h1>@ViewData["Title"]</h1>
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
-                <input asp-for="Input.ConfirmPassword" class="form-control" />
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
+<!--Page Title-->
+<section class="page-title" style="background-image: url(../../../../images/background/8.jpg);">
+    <div class="auto-container">
+        <div class="title-outer">
+            <h1>@ViewData["Title"]</h1>
+            @*<ul class="page-breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li>Shop</li>
+                </ul>*@
+        </div>
     </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h4>Use another service to register.</h4>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
+</section>
+
+<section class="login-section">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="column col-lg-12 col-md-12 col-sm-12">
+                <p style="text-align:center">
+                    Merhaba!<br />Yeni bir kullanıcı oluşturmak için geçerli bir e-posta girilmelidir.<br /> Şifre belirlerken en az bir büyük, bir küçük harf, bir sayı ve bir noktalama işareti kullanmaya ve minimum 8 karakterli olmasına dikkat ediniz.
+                    <hr />
+                </p>
+                <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+
+                    <!-- Login Form -->
+                    <div class="login-form">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Input.Email">E-Posta</label>
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
                         </div>
-                    </form>
-                }
-            }
-        </section>
+                        <div class="form-group">
+                            <label asp-for="Input.Password">Şifre</label>
+                            <input asp-for="Input.Password" class="form-control" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.ConfirmPassword">Şifre Tekrar</label>
+                            <input asp-for="Input.ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.AdSoyad">Ad Soyad</label>
+                            <input asp-for="Input.AdSoyad" class="form-control" />
+                            <span asp-validation-for="Input.AdSoyad" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Kurum">Kurum</label>
+                            <input asp-for="Input.Kurum" class="form-control" />
+                            <span asp-validation-for="Input.Kurum" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Bolum">Bölüm</label>
+                            <input asp-for="Input.Bolum" class="form-control" />
+                            <span asp-validation-for="Input.Bolum" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Unvan">Ünvan</label>
+                            <input asp-for="Input.Unvan" class="form-control" />
+                            <span asp-validation-for="Input.Unvan" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Telefon">Telefon</label>
+                            <input asp-for="Input.Telefon" class="form-control" />
+                            <span asp-validation-for="Input.Telefon" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="theme-btn btn-style-three"><span class="btn-title">Kaydet</span></button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

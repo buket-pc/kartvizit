@@ -1,5 +1,5 @@
 ﻿using System;
-using Kartvizit.Data;
+using kartvizit.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
@@ -7,8 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-[assembly: HostingStartup(typeof(Kartvizit.Areas.Identity.IdentityHostingStartup))]
-namespace Kartvizit.Areas.Identity
+[assembly: HostingStartup(typeof(kartvizit.Areas.Identity.IdentityHostingStartup))]
+namespace kartvizit.Areas.Identity
 {
     public class IdentityHostingStartup : IHostingStartup
     {
