@@ -97,7 +97,7 @@
 .why-choose-us .skills .skill-item .skill-header .skill-percentage,
 .theme_color,
 a{
-	color: #851c8c;
+	color: #76bd04;
 }
 
 /*=== Background Color ===*/
@@ -176,7 +176,7 @@ a{
 .sidebar .popular-tags a:hover,
 .portfolio-block .overlay .title-box:before,
 .social-icon-one li a:hover{
-	background-color: #851c8c;
+	background-color: #76bd04;
 }
 
 /*Border Color*/ 
@@ -228,14 +228,15 @@ a{
 .social-icon-four li a:hover,
 .payment-box .payment-options li .radio-option label .small-text:before,
 .default-form .form-group textarea:focus{
-	border-color: #851c8c;
+	border-color: #76bd04;
 }
 
 .sec-title .divider svg,
 .sec-title .divider svg{
-	fill: #851c8c;
+	fill: #76bd04;
 }
 
 .preloader{
   background-image: url(../..//images/icons/page-loader-4.gif);
 }
+/*ctrl + shift + H*/
